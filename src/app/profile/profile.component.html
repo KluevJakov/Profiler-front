@@ -1,0 +1,3 @@
+<button (click)="createCategory()">create category</button>
+
+<app-create-category *ngIf="modalVisible" [create]="modalCreate" (modalClosed)="modalVisible = false"></app-create-category>
