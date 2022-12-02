@@ -1,0 +1,45 @@
+.home__content-img {
+  width: 100%;
+}
+
+.home__wrap {
+  margin-top: 4rem;
+  padding: 0 2rem 0 2rem;
+}
+
+.home__preview {
+  /*margin-right: 5rem;*/
+}
+
+.home__preview-h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 76px;
+}
+
+.home__preview-span {
+  font-size: 24px;
+}
+
+.home-card {
+  width: 10vw;
+  height: 25vh;
+  background-color: #3EC5EF;
+  border-radius: 10px;
+}
+
+#center {
+  background-color: #9DD7E9;
+}
+
+.icon-wrap {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.footer {
+  height: 4.4rem;
+  background-color: #1CBAEA;
+}
