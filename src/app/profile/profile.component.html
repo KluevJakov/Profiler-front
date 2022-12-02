@@ -1,3 +1,7 @@
 <button (click)="createCategory()">create category</button>
 
 <app-create-category *ngIf="modalVisible" [create]="modalCreate" (modalClosed)="modalVisible = false"></app-create-category>
+
+<button (click)="uploadFiles()">upload files</button>
+
+<app-upload-file *ngIf="modalUploadVisible" [create]="modalUploadCreate" (modalClosed)="modalUploadVisible = false"></app-upload-file>

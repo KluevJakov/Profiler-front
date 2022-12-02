@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { CreateCategoryComponent } from './create-category/create-category.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,16 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     LoginComponent,
     CreateCategoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,13 @@
   <a routerLink="">
     <h1>Профайлер</h1>
   </a>
-  <a routerLink="login" class="header-btn d-flex justify-content-center align-items-center">
+  <a *ngIf="!authService.isUserLoggedIn()" routerLink="login" class="header-btn d-flex justify-content-center align-items-center">
     Войти
+  </a>
+  <a *ngIf="authService.isUserLoggedIn()" routerLink="profile" class="header-btn d-flex justify-content-center align-items-center">
+    Профиль
+  </a>
+  <a *ngIf="authService.isUserLoggedIn()" class="header-btn d-flex justify-content-center align-items-center" (click)="logout()">
+    Выход
   </a>
 </header>

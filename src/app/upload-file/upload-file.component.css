@@ -1,0 +1,41 @@
+.login-wrap {
+    height: 90vh;
+  }
+  
+  .form {
+    background-color: #3EC5EF;
+    width: 30vw;
+    height: 50vh;
+    border-radius: 15px;
+  }
+  
+  h3{
+    color: white;
+  }
+  
+  .btn-login {
+    background: linear-gradient(278.21deg, #005490 1.66%, #328BCB 96.78%);
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    border: none;
+    width: 95px;
+    height: 38px;
+    font-size: 18px;
+  }
+  
+  .btn-close-cc {
+    background: transparent;
+    border: none;
+  }
+  
+  .btn-close-cc img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+  .btn-close-wrap {
+    padding-right: 1rem;
+  }
+  
