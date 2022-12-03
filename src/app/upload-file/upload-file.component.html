@@ -1,16 +1,38 @@
 <div class="login-wrap d-flex justify-content-center align-items-center">
-    <form class="form d-flex flex-column justify-content-evenly align-items-center">
-      <div class="btn-close-wrap d-flex justify-content-end w-100">
-        <button (click)="close()" class="btn-close-cc">
-          <img src="../../assets/images/icon-close.svg">
-        </button>
+  <form class="form d-flex flex-column justify-content-evenly align-items-center">
+    <div class="btn-close-wrap d-flex justify-content-end w-100">
+      <button (click)="close()" class="btn-close-cc">
+        <img src="../../assets/images/icon-close.svg">
+      </button>
+    </div>
+
+    <div class="center">
+      <ngx-file-drop 
+        dropZoneLabel="Drop files here"
+        (onFileDrop)="dropped($event)" 
+        (onFileOver)="fileOver($event)" 
+        (onFileLeave)="fileLeave($event)"
+        [multiple]="true"
+      >
+          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+            Перетащите нужные файлы в эту зону
+            <button type="button" (click)="openFileSelector()">Browse Files</button>
+          </ng-template>
+      </ngx-file-drop>
+      <div class="upload-table">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                  </tr>
+              </thead>
+              <tbody class="upload-name-style">
+                  <tr *ngFor="let item of files; let i=index">
+                      <td><strong>{{ item.relativePath }}</strong></td>
+                  </tr>
+              </tbody>
+          </table>
       </div>
-  
-      <h3>Загрузка файлов</h3>
-      <div class="d-flex flex-column">
-        <input type="text" placeholder="Файлы" class="">
-      </div>
-  
-      <button class="btn-login">Обработать</button>
-    </form>
   </div>
+  </form>
+</div>

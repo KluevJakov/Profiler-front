@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     LoginComponent,
     CreateCategoryComponent,
     ProfileComponent,
-    UploadFileComponent
+    UploadFileComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule,
+    NgxFileDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
