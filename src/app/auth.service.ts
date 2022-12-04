@@ -34,4 +34,8 @@ export class AuthService {
   static getJwtHeader() { // HTTP заголовки для JWT аутентификации
     return {headers: {'Content-Type':'application/json','Authorization':"Bearer " + JSON.parse(sessionStorage.getItem('user')!).token}};
   }
+
+  static getJwtHeaderForFiles() { // HTTP заголовки для JWT аутентификации
+    return {headers: {'Authorization':"Bearer " + JSON.parse(sessionStorage.getItem('user')!).token}};
+  }
 }
