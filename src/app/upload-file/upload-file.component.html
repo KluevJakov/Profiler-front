@@ -8,13 +8,20 @@
     <div *ngIf="isLoading" class="spinner-grow" style="width: 5rem; height: 5rem; background: white;" role="status">
     </div>
     <div *ngIf="hasResult && !isLoading" class="parseResult">
-      <span><h3>Результат обработки:</h3></span>
-      <span>Ссылка для скачивания результата: {{this.execResult.urlResult}}</span>
-      <span>Обработано файлов: {{this.execResult.files}}</span>
-      <span>Прогресс категоризации: {{this.execResult.progress}}</span>
-      <span>Время обработки: {{this.execResult.execTime}} с.</span>
+      <span>
+        <h3>Результат обработки:</h3>
+      </span>
+      <div *ngIf="!hasError" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <span>Ссылка для скачивания результата: {{this.execResult.urlResult}}</span>
+        <span>Обработано файлов: {{this.execResult.files}}</span>
+        <span>Прогресс категоризации: {{this.execResult.progress}}</span>
+        <span>Время обработки: {{this.execResult.execTime}} с.</span>
+      </div>
+      <div *ngIf="hasError">
+        <span>Во время обработки, произошла ошибка, попробуйте ещё раз</span>
+      </div>
       <span style="width: 60%;"><button class="parseResultBtn" type="button"
-        (click)="hasResult=false;">Обработать ещё</button></span>
+          (click)="hasResult=false;hasError=false;">Обработать ещё</button></span>
     </div>
     <ngx-file-drop *ngIf="!isLoading && !hasResult" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
       (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" [multiple]="true" [directory]="false"

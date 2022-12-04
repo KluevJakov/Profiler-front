@@ -18,6 +18,7 @@ export class UploadFileComponent implements OnInit {
   isLoading: boolean = false;
   isFilesReadyForDownload: boolean = false;
   hasResult: boolean = false;
+  hasError: boolean = false;
 
   static ExecResult = class {
     text: string;
@@ -84,6 +85,7 @@ export class UploadFileComponent implements OnInit {
           },
           (error: HttpErrorResponse) => {
             console.log(error.error);
+            this.hasError = true;
           }
         );
     } else {
