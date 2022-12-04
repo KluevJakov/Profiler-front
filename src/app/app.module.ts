@@ -13,6 +13,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +37,8 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [],
   bootstrap: [AppComponent]

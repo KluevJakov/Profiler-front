@@ -1,7 +1,59 @@
-<button (click)="createCategory()">create category</button>
+<div class="btn-wrap d-flex flex-row gap-2 justify-content-end">
+  <button (click)="createCategory()" class="btn-create">Создать категорию</button>
+  <button (click)="uploadFiles()" class="btn-create">Загрузить файлы</button>
+</div>
 
-<app-create-category *ngIf="modalVisible" [create]="modalCreate" (modalClosed)="modalVisible = false"></app-create-category>
 
-<button (click)="uploadFiles()">upload files</button>
 
-<app-upload-file *ngIf="modalUploadVisible" [create]="modalUploadCreate" (modalClosed)="modalUploadVisible = false"></app-upload-file>
+<div class="card-wrap">
+
+  <div [ngClass]="{'blur' : modalVisible || modalUploadVisible}"
+       class="d-flex flex-row col-12 gap-4 mt-4 justify-content-center">
+
+    <div class="card-custom col-3">
+      <ul>
+        <li>Name</li>
+        <li>Surname</li>
+        <li>Otchestvo</li>
+        <li>Role</li>
+      </ul>
+    </div>
+
+    <div class="card-custom col-3 d-flex justify-content-center">
+      <table>
+        <thead>
+        <tr>
+          <th colspan="2">The table header</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>The table body</td>
+          <td>with two columns</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-custom col-3">
+      <table>
+        <thead>
+        <tr>
+          <th colspan="2">The table header</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>The table body</td>
+          <td>with two columns</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-create-category *ngIf="modalVisible" [create]="modalCreate"
+                     (modalClosed)="modalVisible = false"></app-create-category>
+<app-upload-file *ngIf="modalUploadVisible" [create]="modalUploadCreate"
+                 (modalClosed)="modalUploadVisible = false"></app-upload-file>

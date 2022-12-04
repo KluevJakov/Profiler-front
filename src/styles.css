@@ -1,131 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 body {
-    background: #3399ff;
+  /*background: #3399ff;*/
 }
 
-.ripple-background {}
+.ripple-background {
+  height: 600px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 
 .circle {
-    position: absolute;
-    border-radius: 50%;
-    background: white;
-    animation: ripple 15s infinite;
-    box-shadow: 0px 0px 1px 0px #508fb9;
-    z-index: -9;
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+  z-index: -9;
 }
 
 .small {
-    width: 200px;
-    height: 200px;
-    left: -100px;
-    bottom: -100px;
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
 }
 
 .medium {
-    width: 400px;
-    height: 400px;
-    left: -200px;
-    bottom: -200px;
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
 }
 
 .large {
-    width: 600px;
-    height: 600px;
-    left: -300px;
-    bottom: -300px;
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
 }
 
 .xlarge {
-    width: 800px;
-    height: 800px;
-    left: -400px;
-    bottom: -400px;
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
 }
 
 .xxlarge {
-    width: 1000px;
-    height: 1000px;
-    left: -500px;
-    bottom: -500px;
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
 }
 
 .shade1 {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 .shade2 {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .shade3 {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .shade4 {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .shade5 {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 @keyframes ripple {
-    0% {
-        transform: scale(0.8);
-    }
+  0% {
+    transform: scale(0.8);
+  }
 
-    50% {
-        transform: scale(1.2);
-    }
+  50% {
+    transform: scale(1.2);
+  }
 
-    100% {
-        transform: scale(0.8);
-    }
+  100% {
+    transform: scale(0.8);
+  }
 }
 
 .dropbox {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropboxContent {
-    width: 100%;
-    height: 100%;
-    border: 2px dotted;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
 
 .dropboxZone {
-    width: 90%;
-    height: 90%;
-    color: white;
+  width: 90%;
+  height: 90%;
+  color: white;
 }
 
 .dropboxBrowse {
-    width: 55%;
-    color: white;
-    border-radius: 15px;
-    background: none;
-    border: 2px solid;
-    transition: .2s;
-    margin-bottom: 10px;
+  width: 55%;
+  color: white;
+  border-radius: 15px;
+  background: none;
+  border: 2px solid;
+  transition: .2s;
+  margin-bottom: 10px;
 }
 
 .dropboxBrowse:hover {
-    width: 55%;
-    background: white;
-    color: black;
-    transition: .2s;
+  width: 55%;
+  background: linear-gradient(278.21deg, #005490 1.66%, #328BCB 96.78%);
+  color: white;
+  border: 2px solid white;
+  transition: .2s;
 }
+
+
