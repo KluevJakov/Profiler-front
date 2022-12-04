@@ -1,0 +1,54 @@
+.card-wrap {
+  margin-top: 5%;
+}
+
+.btn-wrap {
+  margin-top: 1.5rem;
+  padding-right: 1rem;
+}
+
+/*li::before {*/
+/*  content: url("src/assets/images/icon-close.svg");*/
+/*  !*background: lightgray;*!*/
+/*  border-radius: 1ch;*/
+/*  padding-inline: 1ch;*/
+/*  margin-inline-end: 1ch;*/
+/*}*/
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 1rem;
+  font-size: 20px;
+}
+
+.card-custom {
+  background-color: #9DD7E9;
+  border-radius: 10px;
+  width: 20%;
+  height: 60vh;
+  /*border: 2px solid #1FBBEB;*/
+}
+
+.btn-create {
+  background: linear-gradient(278.21deg, #005490 1.66%, #328BCB 96.78%);
+  border-radius: 4px;
+  outline: none;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 38px;
+  font-size: 18px;
+}
+
+.blur {
+  filter: blur(2.5px);
+  opacity: 0.4;
+}
+
+table, td {
+  border: 1px solid black;
+}

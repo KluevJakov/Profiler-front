@@ -1,5 +1,7 @@
 .login-wrap {
-  height: 90vh;
+  position: fixed;
+  top: 30%;
+  left: 35%;
 }
 
 .form {
@@ -19,7 +21,7 @@ h3{
   outline: none;
   color: white;
   border: none;
-  width: 95px;
+  width: 145px;
   height: 38px;
   font-size: 18px;
 }
@@ -37,4 +39,6 @@ h3{
 
 .btn-close-wrap {
   padding-right: 1rem;
+  margin-top: 1rem;
+  /*margin-top: 10%;*/
 }

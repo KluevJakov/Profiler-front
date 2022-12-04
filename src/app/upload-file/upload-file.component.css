@@ -1,5 +1,7 @@
 .login-wrap {
-  height: 90vh;
+  position: fixed;
+  top: 30%;
+  left: 35%;
 }
 
 .form {
@@ -7,6 +9,7 @@
   width: 30vw;
   height: 50vh;
   border-radius: 15px;
+  padding: 1rem;
 }
 
 h3 {
@@ -35,9 +38,10 @@ h3 {
 }
 
 
-.btn-close-wrap {
-  padding-right: 1rem;
-}
+/*.btn-close-wrap {*/
+/*  padding-right: 1rem;*/
+/*  padding-top: 1rem;*/
+/*}*/
 
 .parseResult {
   width: 100%;
@@ -61,7 +65,7 @@ h3 {
 
 .parseResultBtn:hover {
   width: 100%;
-  background: white;
-  color: black;
+  background: #9DD7E9;
+  color: red;
   transition: .2s;
 }
