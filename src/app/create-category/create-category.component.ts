@@ -1,4 +1,13 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../auth.service';
+import { DocCategory } from '../models/doc-category/doc-category.module';
+import { Token } from '../models/token/token.module';
+
+
+const API_URL: string = environment.apiUrl;
 
 @Component({
   selector: 'app-create-category',
@@ -6,6 +15,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./create-category.component.css']
 })
 export class CreateCategoryComponent implements OnInit {
+
+  docsCategory = new DocCategory("");
+
+  constructor(private http: HttpClient,
+    private authService: AuthService) { }
+
+  ngOnInit(): void {
+  }
 
   @Input()
   public create = false;
@@ -18,9 +35,21 @@ export class CreateCategoryComponent implements OnInit {
     this.modalClosed.emit();
   }
 
-  constructor() { }
+  public createCategory() {
+    this.docsCategory.name = (document.getElementById("categoryName") as HTMLInputElement).value;
+    let resultTokens = new Array<Token>();
+    let argTokens = (document.getElementById("categoryTokens") as HTMLInputElement).value.split(",");
+    argTokens.forEach(e => resultTokens.push(new Token(e)));
+    this.docsCategory.token = resultTokens;
 
-  ngOnInit(): void {
+    this.http.post<any>(API_URL + '/api/doc/createCategory', this.docsCategory, AuthService.getJwtHeader())
+      .subscribe(
+        (result: any) => {
+          console.log(result);
+        },
+        (error: HttpErrorResponse) => {
+          console.log(error.error);
+        }
+      );
   }
-
 }
