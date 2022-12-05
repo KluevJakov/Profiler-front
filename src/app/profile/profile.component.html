@@ -3,57 +3,102 @@
   <button (click)="uploadFiles()" class="btn-create">Загрузить файлы</button>
 </div>
 
-
-
 <div class="card-wrap">
 
   <div [ngClass]="{'blur' : modalVisible || modalUploadVisible}"
-       class="d-flex flex-row col-12 gap-4 mt-4 justify-content-center">
+    class="d-flex flex-row col-12 gap-4 mt-4 justify-content-center">
 
-    <div class="card-custom col-3">
+    <div class="card-custom col-3 p-3">
+      <h2>Место оператора: </h2>
       <ul>
-        <li>Name</li>
-        <li>Surname</li>
-        <li>Otchestvo</li>
-        <li>Role</li>
+        <li>Логин: {{currentLogin}}</li>
       </ul>
     </div>
 
-    <div class="card-custom col-3 d-flex justify-content-center">
+    <div class="card-custom col-3 d-flex justify-content-center p-3">
       <table>
         <thead>
-        <tr>
-          <th colspan="2">The table header</th>
-        </tr>
+          <tr>
+            <th colspan="2">Директории</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>The table body</td>
-          <td>with two columns</td>
-        </tr>
+          <tr>
+            <td>2022-12-05</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>--ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----8.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----9.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----2.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>--ПАСПОРТ ВНУТР РФ</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----1.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----3.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>--СНИЛС</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----4.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----5.jpg</td>
+            <td> X </td>
+          </tr>
+          <tr>
+            <td>----6.jpg</td>
+            <td> X </td>
+          </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="card-custom col-3">
+    <div class="card-custom col-3 p-3">
       <table>
         <thead>
-        <tr>
-          <th colspan="2">The table header</th>
-        </tr>
+          <tr>
+            <th>Название</th>
+            <th>Токены</th>
+            <th>Действие</th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>The table body</td>
-          <td>with two columns</td>
-        </tr>
+          <tr *ngFor="let cat of allCategory">
+            <td>{{cat['name']}}</td>
+            <td>
+              <span *ngFor="let tok of cat['token']">{{tok['val']}} </span>
+            </td>
+            <td style="text-align: center; cursor:pointer" (click)="deleteCat($event, cat)">X</td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-<app-create-category *ngIf="modalVisible" [create]="modalCreate"
-                     (modalClosed)="modalVisible = false"></app-create-category>
-<app-upload-file *ngIf="modalUploadVisible" [create]="modalUploadCreate"
-                 (modalClosed)="modalUploadVisible = false"></app-upload-file>
+<app-create-category *ngIf="modalVisible" [create]="modalCreate" (modalClosed)="modalVisible = false">
+</app-create-category>
+<app-upload-file *ngIf="modalUploadVisible" [create]="modalUploadCreate" (modalClosed)="modalUploadVisible = false">
+</app-upload-file>

@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AuthService } from '../auth.service';
 import { DocCategory } from '../models/doc-category/doc-category.module';
@@ -19,7 +20,8 @@ export class CreateCategoryComponent implements OnInit {
   docsCategory = new DocCategory("");
 
   constructor(private http: HttpClient,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -46,9 +48,11 @@ export class CreateCategoryComponent implements OnInit {
       .subscribe(
         (result: any) => {
           console.log(result);
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['/profile']));
         },
         (error: HttpErrorResponse) => {
           console.log(error.error);
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['/profile']));
         }
       );
   }
