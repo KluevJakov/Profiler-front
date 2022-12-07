@@ -6,92 +6,94 @@
 <div class="card-wrap">
 
   <div [ngClass]="{'blur' : modalVisible || modalUploadVisible}"
-    class="d-flex flex-row col-12 gap-4 mt-4 justify-content-center">
+       class="d-flex flex-row col-12 gap-4 mt-4 justify-content-center">
 
     <div class="card-custom col-3 p-3">
       <h2>Место оператора: </h2>
       <ul>
         <li>Логин: {{currentLogin}}</li>
       </ul>
+
+      <ng-lottie width="280px" height="1" [options]="options"></ng-lottie>
     </div>
 
     <div class="card-custom col-3 d-flex justify-content-center p-3">
-      <table>
+      <table class="table table-striped">
         <thead>
-          <tr>
-            <th colspan="2">Директории</th>
-          </tr>
+        <tr>
+          <th colspan="2" class="text-center">Директории</th>
+        </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2022-12-05</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>--ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----8.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----9.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----2.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>--ПАСПОРТ ВНУТР РФ</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----1.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----3.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>--СНИЛС</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----4.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----5.jpg</td>
-            <td> X </td>
-          </tr>
-          <tr>
-            <td>----6.jpg</td>
-            <td> X </td>
-          </tr>
+        <tr>
+          <td>2022-12-05</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>--ВОДИТЕЛЬСКОЕ УДОСТОВЕРЕНИЕ</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----8.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----9.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----2.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>--ПАСПОРТ ВНУТР РФ</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----1.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----3.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>--СНИЛС</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----4.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----5.jpg</td>
+          <td> X</td>
+        </tr>
+        <tr>
+          <td>----6.jpg</td>
+          <td> X</td>
+        </tr>
         </tbody>
       </table>
     </div>
 
     <div class="card-custom col-3 p-3">
-      <table>
+      <table class="table">
         <thead>
-          <tr>
-            <th>Название</th>
-            <th>Токены</th>
-            <th>Действие</th>
-          </tr>
+        <tr>
+          <th>Название</th>
+          <th>Токены</th>
+          <th>Действие</th>
+        </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cat of allCategory">
-            <td>{{cat['name']}}</td>
-            <td>
-              <span *ngFor="let tok of cat['token']">{{tok['val']}} </span>
-            </td>
-            <td style="text-align: center; cursor:pointer" (click)="deleteCat($event, cat)">X</td>
-          </tr>
+        <tr *ngFor="let cat of allCategory">
+          <td>{{cat['name']}}</td>
+          <td>
+            <span *ngFor="let tok of cat['token']">{{tok['val']}} </span>
+          </td>
+          <td style="text-align: center; cursor:pointer" (click)="deleteCat($event, cat)">X</td>
+        </tr>
         </tbody>
       </table>
     </div>
